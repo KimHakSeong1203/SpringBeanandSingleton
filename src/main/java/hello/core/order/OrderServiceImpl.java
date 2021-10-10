@@ -4,6 +4,7 @@ import hello.core.discount.Discountpolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
@@ -25,5 +26,9 @@ public class OrderServiceImpl implements OrderService {
 
         // 회원
         return new Order(memberId, itemName, itemPrice, discointPrice);
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }

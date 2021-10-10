@@ -1,5 +1,7 @@
 package hello.core.member;
 
+import hello.core.discount.Discountpolicy;
+
 public class MemberServiceImpl implements MemberService {
 
     // 추상화에만 의지 (인터페이스)
@@ -18,5 +20,9 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
